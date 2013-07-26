@@ -1,0 +1,37 @@
+---
+abstract: 'Generate text documentation from Rinci function metadata'
+author:
+  - 'Steven Haryanto <stevenharyanto@gmail.com>'
+build_requires:
+  Module::Build: 0.3601
+configure_requires:
+  Module::Build: 0.3601
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.131560'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Perinci-Sub-To-Text
+requires:
+  Data::Dump::OneLine: 0
+  Data::Sah: 0.15
+  List::MoreUtils: 0
+  Locale::Maketext::Lexicon: 0
+  Locale::Maketext::Lexicon::Gettext: 0
+  Log::Any: 0
+  Moo: 0
+  Perinci::Access: 0.32
+  Perinci::Access::InProcess: 0.38
+  Perinci::Object: 0.11
+  Perinci::ToUtil: 0
+  Rinci: v1.1.35
+  SHARYANTO::Role::Doc::Section: 0
+  SHARYANTO::Role::Doc::Section::AddTextLines: 0
+  SHARYANTO::Role::I18N: 0.15
+  SHARYANTO::Role::I18NRinci: 0
+  perl: 5.010001
+resources:
+  homepage: http://metacpan.org/release/Perinci-Sub-To-Text
+  repository: http://github.com/sharyanto/perl-Perinci-Sub-To-Text
+version: 0.21
