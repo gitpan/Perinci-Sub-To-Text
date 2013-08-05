@@ -3,7 +3,7 @@ NAME
     metadata
 
 VERSION
-    version 0.21
+    version 0.22
 
 SYNOPSIS
      use Perinci::Sub::To::Text;
@@ -29,4 +29,8 @@ COPYRIGHT AND LICENSE
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
+
+DESCRIPTION
+FUNCTIONS
+    None are exported by default, but they are exportable.
 

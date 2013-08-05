@@ -4,7 +4,7 @@
       "Steven Haryanto <stevenharyanto@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.131560",
+   "generated_by" : "Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.132140",
    "license" : [
       "perl_5"
    ],
@@ -44,13 +44,19 @@
             "Perinci::Access" : "0.32",
             "Perinci::Access::InProcess" : "0.38",
             "Perinci::Object" : "0.11",
-            "Perinci::ToUtil" : "0",
             "Rinci" : "v1.1.35",
             "SHARYANTO::Role::Doc::Section" : "0",
             "SHARYANTO::Role::Doc::Section::AddTextLines" : "0",
             "SHARYANTO::Role::I18N" : "0.15",
             "SHARYANTO::Role::I18NRinci" : "0",
             "perl" : "5.010001"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Capture::Tiny" : "0",
+            "Test::More" : "0.88",
+            "blib" : "0"
          }
       }
    },
@@ -61,6 +67,6 @@
          "url" : "http://github.com/sharyanto/perl-Perinci-Sub-To-Text"
       }
    },
-   "version" : "0.21"
+   "version" : "0.22"
 }
 

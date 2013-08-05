@@ -17,7 +17,7 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "Perinci-Sub-To-Text",
-  "dist_version" => "0.21",
+  "dist_version" => "0.22",
   "license" => "perl",
   "module_name" => "Perinci::Sub::To::Text",
   "recommends" => {},
@@ -33,7 +33,6 @@ my %module_build_args = (
     "Perinci::Access" => "0.32",
     "Perinci::Access::InProcess" => "0.38",
     "Perinci::Object" => "0.11",
-    "Perinci::ToUtil" => 0,
     "Rinci" => "v1.1.35",
     "SHARYANTO::Role::Doc::Section" => 0,
     "SHARYANTO::Role::Doc::Section::AddTextLines" => 0,
@@ -42,7 +41,11 @@ my %module_build_args = (
     "perl" => "5.010001"
   },
   "script_files" => [],
-  "test_requires" => {}
+  "test_requires" => {
+    "Capture::Tiny" => 0,
+    "Test::More" => "0.88",
+    "blib" => 0
+  }
 );
 
 
