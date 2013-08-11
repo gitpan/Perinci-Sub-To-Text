@@ -7,7 +7,7 @@ use Moo;
 extends 'Perinci::Sub::To::FuncBase';
 with    'SHARYANTO::Role::Doc::Section::AddTextLines';
 
-our $VERSION = '0.23'; # VERSION
+our $VERSION = '0.24'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -18,9 +18,9 @@ sub BUILD {
 sub after_gen_doc {
     my ($self) = @_;
 
-    my $res   = $self->{_res};
-    my $meta  = $self->{_meta};
-    my $ometa = $self->{_orig_meta};
+    my $res   = $self->{_doc_res};
+    my $meta  = $self->{_doc_meta};
+    my $ometa = $self->{_doc_orig_meta};
 
     $self->add_doc_lines(
         "+ " . $res->{name} . $res->{args_plterm} . ' -> ' . $res->{human_ret},
@@ -100,7 +100,7 @@ Perinci::Sub::To::Text - Generate text documentation from Rinci function metadat
 
 =head1 VERSION
 
-version 0.23
+version 0.24
 
 =head1 SYNOPSIS
 
