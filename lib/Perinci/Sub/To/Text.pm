@@ -7,7 +7,7 @@ use Moo;
 extends 'Perinci::Sub::To::FuncBase';
 with    'SHARYANTO::Role::Doc::Section::AddTextLines';
 
-our $VERSION = '0.24'; # VERSION
+our $VERSION = '0.25'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -100,13 +100,13 @@ Perinci::Sub::To::Text - Generate text documentation from Rinci function metadat
 
 =head1 VERSION
 
-version 0.24
+version 0.25
 
 =head1 SYNOPSIS
 
  use Perinci::Sub::To::Text;
 
- my $doc = Perinci::Sub::To::Text->new(url => "/Some/Module/somefunc");
+ my $doc = Perinci::Sub::To::Text->new(url => "pl:/Some/Module/somefunc");
  say $doc->gen_doc;
 
 You can also try the L<peri-func-doc> script (included in the

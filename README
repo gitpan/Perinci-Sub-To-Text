@@ -3,12 +3,12 @@ NAME
     metadata
 
 VERSION
-    version 0.24
+    version 0.25
 
 SYNOPSIS
      use Perinci::Sub::To::Text;
 
-     my $doc = Perinci::Sub::To::Text->new(url => "/Some/Module/somefunc");
+     my $doc = Perinci::Sub::To::Text->new(url => "pl:/Some/Module/somefunc");
      say $doc->gen_doc;
 
     You can also try the peri-func-doc script (included in the

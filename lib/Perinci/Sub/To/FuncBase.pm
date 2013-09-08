@@ -17,20 +17,21 @@ has _pa => (
     lazy => 1,
     default => sub {
         require Perinci::Access;
-        require Perinci::Access::InProcess;
+        require Perinci::Access::Perl;
         my $pa = Perinci::Access->new;
         # slightly reduce startup overhead by avoiding to compile sah schemas
-        my $pai = Perinci::Access::InProcess->new(
+        my $pap = Perinci::Access::Perl->new(
             extra_wrapper_args => {
                 validate_args => 0,
             },
         );
-        $pa->{handlers}{pl} = $pai;
+        $pa->{handlers}{pl} = $pap;
+        delete $pa->{handlers}{''};
         $pa;
     },
 ); # store Perinci::Access object
 
-our $VERSION = '0.24'; # VERSION
+our $VERSION = '0.25'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -206,7 +207,7 @@ Perinci::Sub::To::FuncBase - Base class for Perinci::Sub::To::* function documen
 
 =head1 VERSION
 
-version 0.24
+version 0.25
 
 =for Pod::Coverage .+
 

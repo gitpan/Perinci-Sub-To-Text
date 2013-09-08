@@ -25,7 +25,7 @@ requires:
   Log::Any: 0
   Moo: 0
   Perinci::Access: 0.32
-  Perinci::Access::InProcess: 0.38
+  Perinci::Access::Perl: 0.38
   Perinci::Object: 0.11
   Rinci: v1.1.35
   SHARYANTO::Role::Doc::Section: 0
@@ -36,4 +36,4 @@ requires:
 resources:
   homepage: http://metacpan.org/release/Perinci-Sub-To-Text
   repository: http://github.com/sharyanto/perl-Perinci-Sub-To-Text
-version: 0.24
+version: 0.25
