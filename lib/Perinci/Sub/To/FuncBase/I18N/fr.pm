@@ -1,10 +1,12 @@
+use utf8;
+
 package Perinci::Sub::To::FuncBase::I18N::fr;
 use base 'Perinci::Sub::To::FuncBase::I18N';
 
 use Locale::Maketext::Lexicon::Gettext;
 our %Lexicon = %{ Locale::Maketext::Lexicon::Gettext->parse(<DATA>) };
 
-our $VERSION = '0.26'; # VERSION
+our $VERSION = '0.27'; # VERSION
 
 #use Data::Dump; dd \%Lexicon;
 
@@ -21,7 +23,7 @@ Perinci::Sub::To::FuncBase::I18N::fr - French translation for Perinci::To::Packa
 
 =head1 VERSION
 
-version 0.26
+version 0.27
 
 =head1 AUTHOR
 

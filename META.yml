@@ -35,4 +35,4 @@ requires:
 resources:
   homepage: http://metacpan.org/release/Perinci-Sub-To-Text
   repository: http://github.com/sharyanto/perl-Perinci-Sub-To-Text
-version: 0.26
+version: 0.27
