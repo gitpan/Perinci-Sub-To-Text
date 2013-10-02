@@ -1,41 +1,50 @@
 use strict;
 use warnings;
 
-# This test was generated via Dist::Zilla::Plugin::Test::Compile 2.018
+# this test was generated with Dist::Zilla::Plugin::Test::Compile 2.030
 
-use Test::More 0.88;
+use Test::More  tests => 11 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
 
 
 
-use Capture::Tiny qw{ capture };
-
-my @module_files = qw(
-Perinci/Sub/To/FuncBase.pm
-Perinci/Sub/To/FuncBase/I18N.pm
-Perinci/Sub/To/FuncBase/I18N/en.pm
-Perinci/Sub/To/FuncBase/I18N/id.pm
-Perinci/Sub/To/Text.pm
-Perinci/Sub/To/Text/I18N.pm
-Perinci/Sub/To/Text/I18N/en.pm
-Perinci/Sub/To/Text/I18N/id.pm
-Perinci/ToUtil.pm
+my @module_files = (
+    'Perinci/Sub/To/FuncBase.pm',
+    'Perinci/Sub/To/FuncBase/I18N.pm',
+    'Perinci/Sub/To/FuncBase/I18N/en.pm',
+    'Perinci/Sub/To/FuncBase/I18N/fr.pm',
+    'Perinci/Sub/To/FuncBase/I18N/id.pm',
+    'Perinci/Sub/To/Text.pm',
+    'Perinci/Sub/To/Text/I18N.pm',
+    'Perinci/Sub/To/Text/I18N/en.pm',
+    'Perinci/Sub/To/Text/I18N/fr.pm',
+    'Perinci/Sub/To/Text/I18N/id.pm',
+    'Perinci/ToUtil.pm'
 );
 
-my @scripts = qw(
 
-);
 
 # no fake home requested
+
+use IPC::Open3;
+use IO::Handle;
 
 my @warnings;
 for my $lib (@module_files)
 {
-    my ($stdout, $stderr, $exit) = capture {
-        system($^X, '-Mblib', '-e', qq{require q[$lib]});
-    };
-    is($?, 0, "$lib loaded ok");
-    warn $stderr if $stderr;
-    push @warnings, $stderr if $stderr;
+    # see L<perlfaq8/How can I capture STDERR from an external command?>
+    my $stdin = '';     # converted to a gensym by open3
+    my $stderr = IO::Handle->new;
+
+    my $pid = open3($stdin, '>&STDERR', $stderr, qq{$^X -Mblib -e"require q[$lib]"});
+    binmode $stderr, ':crlf' if $^O; # eq 'MSWin32';
+    waitpid($pid, 0);
+    is($? >> 8, 0, "$lib loaded ok");
+
+    if (my @_warnings = <$stderr>)
+    {
+        warn @_warnings;
+        push @warnings, @_warnings;
+    }
 }
 
 
@@ -43,5 +52,3 @@ for my $lib (@module_files)
 is(scalar(@warnings), 0, 'no warnings found') if $ENV{AUTHOR_TESTING};
 
 
-
-done_testing;

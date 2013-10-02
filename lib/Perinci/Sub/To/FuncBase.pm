@@ -31,7 +31,7 @@ has _pa => (
     },
 ); # store Perinci::Access object
 
-our $VERSION = '0.25'; # VERSION
+our $VERSION = '0.26'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -207,7 +207,7 @@ Perinci::Sub::To::FuncBase - Base class for Perinci::Sub::To::* function documen
 
 =head1 VERSION
 
-version 0.25
+version 0.26
 
 =for Pod::Coverage .+
 
