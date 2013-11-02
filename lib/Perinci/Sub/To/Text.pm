@@ -7,7 +7,7 @@ use Moo;
 extends 'Perinci::Sub::To::FuncBase';
 with    'SHARYANTO::Role::Doc::Section::AddTextLines';
 
-our $VERSION = '0.27'; # VERSION
+our $VERSION = '0.28'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -18,18 +18,17 @@ sub BUILD {
 sub after_gen_doc {
     my ($self) = @_;
 
-    my $res   = $self->{_doc_res};
-    my $meta  = $self->{_doc_meta};
-    my $ometa = $self->{_doc_orig_meta};
+    my $meta  = $self->meta;
+    my $dres  = $self->{_doc_res};
 
     $self->add_doc_lines(
-        "+ " . $res->{name} . $res->{args_plterm} . ' -> ' . $res->{human_ret},
+        "+ ".$dres->{name}.$dres->{args_plterm}.' -> '.$dres->{human_ret},
     );
     $self->inc_doc_indent;
 
-    $self->add_doc_lines("", $res->{summary}) if $res->{summary};
-    $self->add_doc_lines("", $res->{description}) if $res->{description};
-    if (keys %{$res->{args}}) {
+    $self->add_doc_lines("", $dres->{summary})     if $dres->{summary};
+    $self->add_doc_lines("", $dres->{description}) if $dres->{description};
+    if (keys %{$dres->{args}}) {
         $self->add_doc_lines(
             "",
             $self->loc("Arguments") .
@@ -37,10 +36,10 @@ sub after_gen_doc {
             "");
         my $i = 0;
         my $arg_has_ct;
-        for my $name (sort keys %{$res->{args}}) {
+        for my $name (sort keys %{$dres->{args}}) {
             my $prev_arg_has_ct = $arg_has_ct;
             $arg_has_ct = 0;
-            my $ra = $res->{args}{$name};
+            my $ra = $dres->{args}{$name};
             $self->add_doc_lines("") if $i++ > 0 && $prev_arg_has_ct;
             $self->add_doc_lines(join(
                 "",
@@ -69,7 +68,7 @@ sub after_gen_doc {
 
     $self->add_doc_lines("", $self->loc("Return value") . ':');
     $self->inc_doc_indent;
-    my $rn = $ometa->{result_naked} // $meta->{result_naked};
+    my $rn = $meta->{result_naked};
     $self->add_doc_lines($self->loc(join(
         "",
         "Returns an enveloped result (an array). ",
@@ -100,13 +99,13 @@ Perinci::Sub::To::Text - Generate text documentation from Rinci function metadat
 
 =head1 VERSION
 
-version 0.27
+version 0.28
 
 =head1 SYNOPSIS
 
  use Perinci::Sub::To::Text;
 
- my $doc = Perinci::Sub::To::Text->new(url => "pl:/Some/Module/somefunc");
+ my $doc = Perinci::Sub::To::Text->new(meta => {...});
  say $doc->gen_doc;
 
 You can also try the L<peri-func-doc> script (included in the
@@ -121,6 +120,23 @@ L<peri-func-usage> which is included in the L<Perinci::CmdLine> distribution.
 
 =for Pod::Coverage .+
 
+=head1 HOMEPAGE
+
+Please visit the project's homepage at L<https://metacpan.org/release/Perinci-Sub-To-Text>.
+
+=head1 SOURCE
+
+Source repository is at L<https://github.com/sharyanto/perl-Perinci-Sub-To-Text>.
+
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website
+http://rt.cpan.org/Public/Dist/Display.html?Name=Perinci-Sub-To-Text
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
 =head1 AUTHOR
 
 Steven Haryanto <stevenharyanto@gmail.com>
@@ -131,12 +147,5 @@ This software is copyright (c) 2013 by Steven Haryanto.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
-
-=head1 DESCRIPTION
-
-=head1 FUNCTIONS
-
-
-None are exported by default, but they are exportable.
 
 =cut

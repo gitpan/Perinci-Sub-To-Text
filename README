@@ -3,12 +3,12 @@ NAME
     metadata
 
 VERSION
-    version 0.27
+    version 0.28
 
 SYNOPSIS
      use Perinci::Sub::To::Text;
 
-     my $doc = Perinci::Sub::To::Text->new(url => "pl:/Some/Module/somefunc");
+     my $doc = Perinci::Sub::To::Text->new(meta => {...});
      say $doc->gen_doc;
 
     You can also try the peri-func-doc script (included in the
@@ -21,6 +21,21 @@ SYNOPSIS
 
      % peri-func-usage http://example.com/api/somefunc
 
+HOMEPAGE
+    Please visit the project's homepage at
+    <https://metacpan.org/release/Perinci-Sub-To-Text>.
+
+SOURCE
+    Source repository is at
+    <https://github.com/sharyanto/perl-Perinci-Sub-To-Text>.
+
+BUGS
+    Please report any bugs or feature requests on the bugtracker website
+    http://rt.cpan.org/Public/Dist/Display.html?Name=Perinci-Sub-To-Text
+
+    When submitting a bug or request, please include a test-file or a patch
+    to an existing test-file that illustrates the bug or desired feature.
+
 AUTHOR
     Steven Haryanto <stevenharyanto@gmail.com>
 
@@ -29,8 +44,4 @@ COPYRIGHT AND LICENSE
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
-
-DESCRIPTION
-FUNCTIONS
-    None are exported by default, but they are exportable.
 
