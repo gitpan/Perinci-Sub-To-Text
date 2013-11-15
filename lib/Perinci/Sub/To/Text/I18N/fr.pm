@@ -6,7 +6,7 @@ use parent qw(Perinci::Sub::To::Text::I18N Perinci::Sub::To::FuncBase::I18N::fr)
 use Locale::Maketext::Lexicon::Gettext;
 our %Lexicon = %{ Locale::Maketext::Lexicon::Gettext->parse(<DATA>) };
 
-our $VERSION = '0.28'; # VERSION
+our $VERSION = '0.29'; # VERSION
 
 #use Data::Dump; dd \%Lexicon;
 
@@ -15,7 +15,7 @@ our $VERSION = '0.28'; # VERSION
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -23,7 +23,7 @@ Perinci::Sub::To::Text::I18N::fr - French translation for Perinci::To::Text
 
 =head1 VERSION
 
-version 0.28
+version 0.29
 
 =head1 HOMEPAGE
 
@@ -35,8 +35,7 @@ Source repository is at L<https://github.com/sharyanto/perl-Perinci-Sub-To-Text>
 
 =head1 BUGS
 
-Please report any bugs or feature requests on the bugtracker website
-http://rt.cpan.org/Public/Dist/Display.html?Name=Perinci-Sub-To-Text
+Please report any bugs or feature requests on the bugtracker website L<https://rt.cpan.org/Public/Dist/Display.html?Name=Perinci-Sub-To-Text>
 
 When submitting a bug or request, please include a test-file or a
 patch to an existing test-file that illustrates the bug or desired

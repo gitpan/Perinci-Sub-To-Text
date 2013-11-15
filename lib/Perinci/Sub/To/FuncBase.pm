@@ -14,7 +14,7 @@ with 'SHARYANTO::Role::I18NRinci';
 has meta => (is=>'rw');
 has name => (is=>'rw');
 
-our $VERSION = '0.28'; # VERSION
+our $VERSION = '0.29'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -112,7 +112,9 @@ sub gen_doc_section_arguments {
         my $s = $arg->{schema};
         my $ra = $raa->{$name} = {schema=>$s};
         $ra->{human_arg} = Perinci::ToUtil::sah2human_short($s);
-        if (defined $s->[1]{default}) {
+        if (exists $arg->{default}) {
+            $ra->{human_arg_default} = dump1($arg->{default});
+        } elsif (defined $s->[1]{default}) {
             $ra->{human_arg_default} = dump1($s->[1]{default});
         }
         $ra->{summary}     = $self->langprop($arg, 'summary');
@@ -159,7 +161,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -167,7 +169,7 @@ Perinci::Sub::To::FuncBase - Base class for Perinci::Sub::To::* function documen
 
 =head1 VERSION
 
-version 0.28
+version 0.29
 
 =for Pod::Coverage .+
 
@@ -181,8 +183,7 @@ Source repository is at L<https://github.com/sharyanto/perl-Perinci-Sub-To-Text>
 
 =head1 BUGS
 
-Please report any bugs or feature requests on the bugtracker website
-http://rt.cpan.org/Public/Dist/Display.html?Name=Perinci-Sub-To-Text
+Please report any bugs or feature requests on the bugtracker website L<https://rt.cpan.org/Public/Dist/Display.html?Name=Perinci-Sub-To-Text>
 
 When submitting a bug or request, please include a test-file or a
 patch to an existing test-file that illustrates the bug or desired

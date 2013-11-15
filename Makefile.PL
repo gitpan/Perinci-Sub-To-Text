@@ -28,7 +28,7 @@ my %WriteMakefileArgs = (
     "Log::Any" => 0,
     "Moo" => 0,
     "Perinci::Object" => "0.11",
-    "Rinci" => "v1.1.35",
+    "Rinci" => "v1.1.42",
     "SHARYANTO::Role::Doc::Section" => 0,
     "SHARYANTO::Role::Doc::Section::AddTextLines" => 0,
     "SHARYANTO::Role::I18N" => "0.15",
@@ -40,7 +40,7 @@ my %WriteMakefileArgs = (
     "IPC::Open3" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.28",
+  "VERSION" => "0.29",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -59,7 +59,7 @@ my %FallbackPrereqs = (
   "Log::Any" => 0,
   "Moo" => 0,
   "Perinci::Object" => "0.11",
-  "Rinci" => "v1.1.35",
+  "Rinci" => "v1.1.42",
   "SHARYANTO::Role::Doc::Section" => 0,
   "SHARYANTO::Role::Doc::Section::AddTextLines" => 0,
   "SHARYANTO::Role::I18N" => "0.15",
