@@ -2,7 +2,7 @@ package Perinci::Sub::To::Text::I18N;
 
 use parent 'Perinci::Sub::To::FuncBase::I18N';
 
-our $VERSION = '0.29'; # VERSION
+our $VERSION = '0.30'; # VERSION
 
 1;
 # ABSTRACT: Project class for Perinci::Sub::To::Text
@@ -19,7 +19,7 @@ Perinci::Sub::To::Text::I18N - Project class for Perinci::Sub::To::Text
 
 =head1 VERSION
 
-version 0.29
+version 0.30
 
 =head1 HOMEPAGE
 

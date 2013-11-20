@@ -4,7 +4,7 @@ use 5.010;
 use strict;
 use warnings;
 
-our $VERSION = '0.29'; # VERSION
+our $VERSION = '0.30'; # VERSION
 
 # generate human-readable short description of schema, this will be
 # handled in the future by Sah itself (using the human compiler).
@@ -18,7 +18,7 @@ sub sah2human_short {
         my @alts    = map {Data::Sah::normalize_schema($_)}
             @{$s->[1]{of} // []};
         my @types   = map {$_->[0]} @alts;
-        @types      = sort List::MoreUtils::uniq(@types);
+        @types      = sort(List::MoreUtils::uniq(@types));
         return join("|", @types) || 'any';
     } else {
         return $s->[0];
@@ -40,7 +40,7 @@ Perinci::ToUtil - Temporary utility module
 
 =head1 VERSION
 
-version 0.29
+version 0.30
 
 =head1 FUNCTIONS
 

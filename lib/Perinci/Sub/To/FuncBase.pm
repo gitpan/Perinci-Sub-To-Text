@@ -14,7 +14,7 @@ with 'SHARYANTO::Role::I18NRinci';
 has meta => (is=>'rw');
 has name => (is=>'rw');
 
-our $VERSION = '0.29'; # VERSION
+our $VERSION = '0.30'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -169,7 +169,7 @@ Perinci::Sub::To::FuncBase - Base class for Perinci::Sub::To::* function documen
 
 =head1 VERSION
 
-version 0.29
+version 0.30
 
 =for Pod::Coverage .+
 

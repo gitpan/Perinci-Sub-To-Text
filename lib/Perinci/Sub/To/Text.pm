@@ -7,7 +7,7 @@ use Moo;
 extends 'Perinci::Sub::To::FuncBase';
 with    'SHARYANTO::Role::Doc::Section::AddTextLines';
 
-our $VERSION = '0.29'; # VERSION
+our $VERSION = '0.30'; # VERSION
 
 sub BUILD {
     my ($self, $args) = @_;
@@ -99,7 +99,7 @@ Perinci::Sub::To::Text - Generate text documentation from Rinci function metadat
 
 =head1 VERSION
 
-version 0.29
+version 0.30
 
 =head1 SYNOPSIS
 
